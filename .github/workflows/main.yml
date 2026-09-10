@@ -1,0 +1,46 @@
+```yaml
+name: Generar iconos Darsalud
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generar-iconos:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Generar icono 192x192
+        run: |
+          mkdir -p icons
+          convert "Logo Oficial Darsalud Droguerías.png" \
+            -background "#020b2d" \
+            -gravity center \
+            -resize 176x176 \
+            -extent 192x192 \
+            -strip \
+            icons/icon-192.png
+
+      - name: Generar icono 512x512
+        run: |
+          convert "Logo Oficial Darsalud Droguerías.png" \
+            -background "#020b2d" \
+            -gravity center \
+            -resize 470x470 \
+            -extent 512x512 \
+            -strip \
+            icons/icon-512.png
+
+      - name: Guardar iconos en GitHub
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add icons/icon-192.png icons/icon-512.png
+          git commit -m "Generar iconos PWA Darsalud" || echo "No hay cambios para guardar"
+          git push
+```
