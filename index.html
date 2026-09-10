@@ -1,13 +1,43 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta name="theme-color" content="#020b2d">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="apple-mobile-web-app-title" content="Darsalud">
+
+<link
+rel="icon"
+type="image/png"
+sizes="any"
+href="./Logo Oficial Darsalud Droguerías.png"
+>
+
+<link
+rel="apple-touch-icon"
+href="./Logo Oficial Darsalud Droguerías.png"
+>
+
+<link
+rel="manifest"
+href="./manifest.json"
+>
 
 <title>Darsalud Droguerías | Dashboard Gerencial</title>
 
+
 <style>
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -21,116 +51,203 @@ body {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
     background:
-        radial-gradient(circle at 20% 20%, rgba(0, 119, 255, 0.28), transparent 30%),
-        radial-gradient(circle at 80% 80%, rgba(0, 217, 255, 0.20), transparent 30%),
-        linear-gradient(135deg, #01051a 0%, #03134a 45%, #020820 100%);
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(0,119,255,0.28),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(0,217,255,0.20),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #01051a 0%,
+            #03134a 45%,
+            #020820 100%
+        );
+
     color: #ffffff;
+
     overflow-x: hidden;
 }
+
 
 /* =========================
    FONDO FUTURISTA
 ========================= */
 
 .background-grid {
+
     position: fixed;
     inset: 0;
     z-index: 0;
     pointer-events: none;
 
     background-image:
-        linear-gradient(rgba(0, 153, 255, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 153, 255, 0.08) 1px, transparent 1px);
+
+        linear-gradient(
+            rgba(0,153,255,0.08) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(0,153,255,0.08) 1px,
+            transparent 1px
+        );
 
     background-size: 45px 45px;
 
-    mask-image: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.9),
-        rgba(0,0,0,0.25)
-    );
+    mask-image:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.9),
+            rgba(0,0,0,0.25)
+        );
 }
 
+
 .neon-orb {
+
     position: fixed;
+
     border-radius: 50%;
+
     filter: blur(80px);
+
     pointer-events: none;
+
     z-index: 0;
 }
 
+
 .orb-one {
+
     width: 350px;
     height: 350px;
-    background: rgba(0, 102, 255, 0.35);
+
+    background:
+        rgba(0,102,255,0.35);
+
     top: -100px;
     left: -100px;
-    animation: floatOne 8s ease-in-out infinite;
+
+    animation:
+        floatOne 8s ease-in-out infinite;
 }
+
 
 .orb-two {
+
     width: 400px;
     height: 400px;
-    background: rgba(0, 225, 255, 0.22);
+
+    background:
+        rgba(0,225,255,0.22);
+
     bottom: -150px;
     right: -100px;
-    animation: floatTwo 10s ease-in-out infinite;
+
+    animation:
+        floatTwo 10s ease-in-out infinite;
 }
 
+
 @keyframes floatOne {
+
     0%,100% {
         transform: translate(0,0);
     }
+
     50% {
         transform: translate(80px,60px);
     }
 }
 
+
 @keyframes floatTwo {
+
     0%,100% {
         transform: translate(0,0);
     }
+
     50% {
         transform: translate(-60px,-50px);
     }
 }
 
+
 .energy {
+
     position: fixed;
+
     height: 2px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        #008cff,
-        #00eaff,
-        transparent
-    );
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #008cff,
+            #00eaff,
+            transparent
+        );
+
     opacity: 0.35;
+
     filter: blur(1px);
+
     z-index: 0;
 }
 
+
 .energy-one {
+
     width: 70%;
+
     top: 25%;
     left: -10%;
+
     transform: rotate(-8deg);
-    animation: energyMove 7s linear infinite;
+
+    animation:
+        energyMove 7s linear infinite;
 }
+
 
 .energy-two {
+
     width: 60%;
+
     bottom: 20%;
     right: -10%;
+
     transform: rotate(12deg);
-    animation: energyMove 9s linear infinite reverse;
+
+    animation:
+        energyMove 9s linear infinite reverse;
 }
 
+
 @keyframes energyMove {
+
     0% {
-        transform: translateX(-20%) rotate(-8deg);
+
+        transform:
+            translateX(-20%)
+            rotate(-8deg);
+
         opacity: 0;
     }
 
@@ -143,233 +260,351 @@ body {
     }
 
     100% {
-        transform: translateX(40%) rotate(-8deg);
+
+        transform:
+            translateX(40%)
+            rotate(-8deg);
+
         opacity: 0;
     }
 }
+
 
 /* =========================
    PÁGINA COMPLETA
 ========================= */
 
 .page {
+
     position: relative;
+
     z-index: 2;
 
     width: 100%;
+
     min-height: 100vh;
 
     display: flex;
+
     align-items: stretch;
+
     justify-content: center;
 
     padding: 0;
 }
 
+
 /* =========================
-   PANEL DE ACCESO
+   PANEL COMPLETO
 ========================= */
 
 .login-card {
+
     position: relative;
 
     width: 100%;
+
     max-width: none;
+
     min-height: 100vh;
 
     padding: 55px 30px 30px;
 
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
 
     background:
+
         linear-gradient(
             145deg,
-            rgba(4, 25, 75, 0.96),
-            rgba(1, 10, 35, 0.97)
+            rgba(4,25,75,0.96),
+            rgba(1,10,35,0.97)
         );
 
-    border: 1px solid rgba(0, 174, 255, 0.45);
+    border:
+        1px solid
+        rgba(0,174,255,0.45);
 
     box-shadow:
-        inset 0 0 80px rgba(0, 119, 255, 0.10),
-        0 0 80px rgba(0, 119, 255, 0.18);
 
-    backdrop-filter: blur(25px);
+        inset
+        0 0 80px
+        rgba(0,119,255,0.10),
+
+        0 0 80px
+        rgba(0,119,255,0.18);
+
+    backdrop-filter:
+        blur(25px);
 
     overflow: hidden;
 
-    animation: cardAppear 0.8s ease-out;
+    animation:
+        cardAppear 0.8s ease-out;
 }
 
+
 .login-card::before {
+
     content: "";
+
     position: absolute;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 3px;
 
-    background: linear-gradient(
-        90deg,
-        transparent,
-        #007bff,
-        #00eaff,
-        #007bff,
-        transparent
-    );
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            #007bff,
+            #00eaff,
+            #007bff,
+            transparent
+        );
 
     box-shadow:
+
         0 0 15px #008cff,
         0 0 30px #00d9ff;
 }
 
+
 .login-card::after {
+
     content: "";
+
     position: absolute;
+
     inset: 0;
 
     background:
+
         radial-gradient(
             circle at 50% 0%,
-            rgba(0, 183, 255, 0.12),
+            rgba(0,183,255,0.12),
             transparent 35%
         );
 
     pointer-events: none;
 }
 
+
 @keyframes cardAppear {
+
     from {
+
         opacity: 0;
-        transform: scale(0.97);
+
+        transform:
+            scale(0.97);
     }
 
     to {
+
         opacity: 1;
-        transform: scale(1);
+
+        transform:
+            scale(1);
     }
 }
+
 
 /* =========================
    CONTENIDO
 ========================= */
 
 .login-content {
+
     position: relative;
+
     z-index: 2;
 
     width: 100%;
+
     max-width: 560px;
 
     text-align: center;
 }
+
 
 /* =========================
    LOGO
 ========================= */
 
 .logo-container {
+
     width: 230px;
+
     height: 135px;
 
-    margin: 0 auto 22px;
+    margin:
+        0 auto 22px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     position: relative;
 }
 
+
 .logo-container::before {
+
     content: "";
 
     position: absolute;
+
     width: 180px;
+
     height: 110px;
 
     border-radius: 50%;
 
-    background: rgba(0, 157, 255, 0.18);
+    background:
+        rgba(0,157,255,0.18);
 
     filter: blur(30px);
 
-    animation: logoGlow 3s ease-in-out infinite;
+    animation:
+        logoGlow 3s ease-in-out infinite;
 }
 
+
 .logo {
+
     position: relative;
+
     z-index: 2;
 
     max-width: 190px;
+
     max-height: 110px;
 
     object-fit: contain;
 
     filter:
-        drop-shadow(0 0 8px rgba(0, 174, 255, 0.75))
-        drop-shadow(0 0 20px rgba(0, 119, 255, 0.55));
 
-    animation: logoPulse 3s ease-in-out infinite;
+        drop-shadow(
+            0 0 8px
+            rgba(0,174,255,0.75)
+        )
+
+        drop-shadow(
+            0 0 20px
+            rgba(0,119,255,0.55)
+        );
+
+    animation:
+        logoPulse 3s ease-in-out infinite;
 }
+
 
 @keyframes logoGlow {
+
     0%,100% {
+
         opacity: 0.55;
-        transform: scale(0.95);
+
+        transform:
+            scale(0.95);
     }
 
     50% {
+
         opacity: 1;
-        transform: scale(1.08);
+
+        transform:
+            scale(1.08);
     }
 }
+
 
 @keyframes logoPulse {
+
     0%,100% {
+
         filter:
-            drop-shadow(0 0 8px rgba(0, 174, 255, 0.70))
-            drop-shadow(0 0 18px rgba(0, 119, 255, 0.45));
+
+            drop-shadow(
+                0 0 8px
+                rgba(0,174,255,0.70)
+            )
+
+            drop-shadow(
+                0 0 18px
+                rgba(0,119,255,0.45)
+            );
     }
 
     50% {
+
         filter:
-            drop-shadow(0 0 12px rgba(0, 217, 255, 0.95))
-            drop-shadow(0 0 30px rgba(0, 119, 255, 0.70));
+
+            drop-shadow(
+                0 0 12px
+                rgba(0,217,255,0.95)
+            )
+
+            drop-shadow(
+                0 0 30px
+                rgba(0,119,255,0.70)
+            );
     }
 }
+
 
 /* =========================
    ESTADO
 ========================= */
 
 .system-status {
+
     display: inline-flex;
+
     align-items: center;
+
     gap: 8px;
 
     margin-bottom: 18px;
 
-    padding: 7px 14px;
+    padding:
+        7px 14px;
 
     border-radius: 30px;
 
-    background: rgba(0, 119, 255, 0.10);
+    background:
+        rgba(0,119,255,0.10);
 
-    border: 1px solid rgba(0, 200, 255, 0.30);
+    border:
+        1px solid
+        rgba(0,200,255,0.30);
 
     color: #8cddff;
 
     font-size: 11px;
+
     font-weight: bold;
+
     letter-spacing: 2px;
 }
 
+
 .status-dot {
+
     width: 8px;
+
     height: 8px;
 
     border-radius: 50%;
@@ -377,13 +612,17 @@ body {
     background: #00eaff;
 
     box-shadow:
+
         0 0 8px #00eaff,
         0 0 15px #00eaff;
 
-    animation: statusPulse 1.5s infinite;
+    animation:
+        statusPulse 1.5s infinite;
 }
 
+
 @keyframes statusPulse {
+
     0%,100% {
         opacity: 1;
     }
@@ -393,12 +632,15 @@ body {
     }
 }
 
+
 /* =========================
    TITULOS
 ========================= */
 
 h1 {
-    font-size: clamp(28px, 4vw, 44px);
+
+    font-size:
+        clamp(28px,4vw,44px);
 
     margin-bottom: 10px;
 
@@ -406,21 +648,27 @@ h1 {
 
     letter-spacing: 1px;
 
-    background: linear-gradient(
-        90deg,
-        #ffffff,
-        #61dfff,
-        #008cff
-    );
+    background:
+
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #61dfff,
+            #008cff
+        );
 
     -webkit-background-clip: text;
+
     -webkit-text-fill-color: transparent;
 
     text-shadow:
-        0 0 20px rgba(0, 174, 255, 0.25);
+        0 0 20px
+        rgba(0,174,255,0.25);
 }
 
+
 .subtitle {
+
     color: #a9c9e8;
 
     font-size: 15px;
@@ -430,10 +678,15 @@ h1 {
     letter-spacing: 0.4px;
 }
 
+
 .security {
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     gap: 8px;
 
     margin-bottom: 25px;
@@ -441,10 +694,13 @@ h1 {
     color: #6fcfff;
 
     font-size: 12px;
+
     letter-spacing: 1.5px;
 }
 
+
 .security::before {
+
     content: "◈";
 
     color: #00eaff;
@@ -453,17 +709,21 @@ h1 {
         0 0 10px #00eaff;
 }
 
+
 /* =========================
    CAMPOS
 ========================= */
 
 .form-group {
+
     text-align: left;
 
     margin-bottom: 18px;
 }
 
+
 .form-label {
+
     display: block;
 
     margin-bottom: 8px;
@@ -477,25 +737,32 @@ h1 {
     letter-spacing: 1px;
 }
 
+
 .input-box {
+
     position: relative;
 }
 
+
 .input-box input {
+
     width: 100%;
 
     height: 55px;
 
-    padding: 0 18px;
+    padding:
+        0 18px;
 
     border-radius: 12px;
 
-    border: 1px solid rgba(0, 174, 255, 0.28);
+    border:
+        1px solid
+        rgba(0,174,255,0.28);
 
     outline: none;
 
     background:
-        rgba(0, 20, 55, 0.72);
+        rgba(0,20,55,0.72);
 
     color: #ffffff;
 
@@ -504,33 +771,49 @@ h1 {
     transition: 0.3s;
 
     box-shadow:
-        inset 0 0 20px rgba(0, 80, 180, 0.08);
+        inset
+        0 0 20px
+        rgba(0,80,180,0.08);
 }
+
 
 .input-box input::placeholder {
     color: #6686a8;
 }
 
+
 .input-box input:focus {
+
     border-color: #00c8ff;
 
     box-shadow:
-        0 0 0 3px rgba(0, 174, 255, 0.10),
-        0 0 25px rgba(0, 174, 255, 0.18),
-        inset 0 0 20px rgba(0, 119, 255, 0.10);
+
+        0 0 0 3px
+        rgba(0,174,255,0.10),
+
+        0 0 25px
+        rgba(0,174,255,0.18),
+
+        inset
+        0 0 20px
+        rgba(0,119,255,0.10);
 }
 
+
 /* =========================
-   PASSWORD
+   CONTRASEÑA
 ========================= */
 
 .password-toggle {
+
     position: absolute;
 
     right: 16px;
+
     top: 50%;
 
-    transform: translateY(-50%);
+    transform:
+        translateY(-50%);
 
     border: none;
 
@@ -545,18 +828,22 @@ h1 {
     padding: 5px;
 }
 
+
 .password-toggle:hover {
+
     color: #ffffff;
 
     text-shadow:
         0 0 10px #00eaff;
 }
 
+
 /* =========================
    BOTÓN
 ========================= */
 
 .login-btn {
+
     width: 100%;
 
     height: 58px;
@@ -578,6 +865,7 @@ h1 {
     letter-spacing: 1.5px;
 
     background:
+
         linear-gradient(
             90deg,
             #005eff,
@@ -586,8 +874,12 @@ h1 {
         );
 
     box-shadow:
-        0 0 15px rgba(0, 119, 255, 0.45),
-        0 0 35px rgba(0, 174, 255, 0.20);
+
+        0 0 15px
+        rgba(0,119,255,0.45),
+
+        0 0 35px
+        rgba(0,174,255,0.20);
 
     transition: 0.3s;
 
@@ -596,18 +888,23 @@ h1 {
     overflow: hidden;
 }
 
+
 .login-btn::before {
+
     content: "";
 
     position: absolute;
 
     top: 0;
+
     left: -100%;
 
     width: 60%;
+
     height: 100%;
 
     background:
+
         linear-gradient(
             90deg,
             transparent,
@@ -615,12 +912,16 @@ h1 {
             transparent
         );
 
-    transform: skewX(-20deg);
+    transform:
+        skewX(-20deg);
 
-    animation: buttonShine 3s infinite;
+    animation:
+        buttonShine 3s infinite;
 }
 
+
 @keyframes buttonShine {
+
     0% {
         left: -100%;
     }
@@ -630,23 +931,35 @@ h1 {
     }
 }
 
+
 .login-btn:hover {
-    transform: translateY(-2px);
+
+    transform:
+        translateY(-2px);
 
     box-shadow:
-        0 0 20px rgba(0, 174, 255, 0.65),
-        0 0 45px rgba(0, 174, 255, 0.30);
+
+        0 0 20px
+        rgba(0,174,255,0.65),
+
+        0 0 45px
+        rgba(0,174,255,0.30);
 }
 
+
 .login-btn:active {
-    transform: translateY(0);
+
+    transform:
+        translateY(0);
 }
+
 
 /* =========================
    ERROR
 ========================= */
 
 .error {
+
     display: none;
 
     margin-top: 16px;
@@ -655,21 +968,27 @@ h1 {
 
     border-radius: 10px;
 
-    background: rgba(255, 40, 70, 0.10);
+    background:
+        rgba(255,40,70,0.10);
 
-    border: 1px solid rgba(255, 70, 90, 0.35);
+    border:
+        1px solid
+        rgba(255,70,90,0.35);
 
     color: #ff8797;
 
     font-size: 13px;
 }
 
+
 /* =========================
    FOOTER
 ========================= */
 
 .footer {
+
     position: relative;
+
     z-index: 2;
 
     margin-top: 30px;
@@ -685,303 +1004,420 @@ h1 {
     letter-spacing: 0.5px;
 }
 
+
 .footer strong {
+
     color: #83dfff;
 
     letter-spacing: 1px;
 }
 
+
 /* =========================
    RESPONSIVE
 ========================= */
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
 
     .login-card {
-        padding: 35px 20px 25px;
+
+        padding:
+            35px 20px 25px;
     }
 
     .login-content {
+
         max-width: 430px;
     }
 
     .logo-container {
+
         width: 200px;
+
         height: 115px;
+
         margin-bottom: 15px;
     }
 
     .logo {
+
         max-width: 165px;
+
         max-height: 95px;
     }
 
     h1 {
+
         font-size: 29px;
     }
 
     .subtitle {
+
         font-size: 13px;
+
         margin-bottom: 25px;
     }
 
     .input-box input {
+
         height: 52px;
     }
 
     .login-btn {
+
         height: 55px;
     }
 }
 
-@media (max-height: 700px) {
+
+@media (max-height:700px) {
 
     .login-card {
+
         padding-top: 20px;
+
         padding-bottom: 20px;
     }
 
     .logo-container {
+
         height: 90px;
+
         margin-bottom: 8px;
     }
 
     .logo {
+
         max-height: 75px;
     }
 
     .system-status {
+
         margin-bottom: 10px;
     }
 
     .subtitle {
+
         margin-bottom: 18px;
     }
 
     .security {
+
         margin-bottom: 15px;
     }
 
     .form-group {
+
         margin-bottom: 12px;
     }
 
     .footer {
+
         margin-top: 18px;
     }
 }
+
 </style>
+
 </head>
 
+
 <body>
+
 
 <div class="background-grid"></div>
 
 <div class="neon-orb orb-one"></div>
+
 <div class="neon-orb orb-two"></div>
 
 <div class="energy energy-one"></div>
+
 <div class="energy energy-two"></div>
+
 
 <main class="page">
 
-    <section class="login-card">
 
-        <div class="login-content">
+<section class="login-card">
 
-            <div class="logo-container">
-                <img
-                    src="Logo Oficial Darsalud Droguerías.png"
-                    alt="Darsalud Droguerías"
-                    class="logo"
-                >
-            </div>
 
-            <div class="system-status">
-                <span class="status-dot"></span>
-                SISTEMA OPERATIVO
-            </div>
+<div class="login-content">
 
-            <h1>ACCESO SEGURO</h1>
 
-            <p class="subtitle">
-                Dashboard Gerencial
-            </p>
+<div class="logo-container">
 
-            <div class="security">
-                PLATAFORMA DE GESTIÓN Y ANÁLISIS EMPRESARIAL
-            </div>
+<img
+    src="./Logo Oficial Darsalud Droguerías.png"
+    alt="Darsalud Droguerías"
+    class="logo"
+>
 
-            <form onsubmit="event.preventDefault(); ingresar();">
+</div>
 
-                <div class="form-group">
 
-                    <label class="form-label">
-                        USUARIO
-                    </label>
+<div class="system-status">
 
-                    <div class="input-box">
+<span class="status-dot"></span>
 
-                        <input
-                            type="text"
-                            id="usuario"
-                            placeholder="Ingrese su usuario"
-                            autocomplete="username"
-                        >
+SISTEMA OPERATIVO
 
-                    </div>
+</div>
 
-                </div>
 
-                <div class="form-group">
+<h1>
+ACCESO SEGURO
+</h1>
 
-                    <label class="form-label">
-                        CONTRASEÑA
-                    </label>
 
-                    <div class="input-box">
+<p class="subtitle">
+Dashboard Gerencial
+</p>
 
-                        <input
-                            type="password"
-                            id="password"
-                            placeholder="Ingrese su contraseña"
-                            autocomplete="current-password"
-                        >
 
-                        <button
-                            type="button"
-                            class="password-toggle"
-                            onclick="mostrarPassword()"
-                            aria-label="Mostrar contraseña"
-                        >
-                            👁
-                        </button>
+<div class="security">
 
-                    </div>
+PLATAFORMA DE GESTIÓN Y ANÁLISIS EMPRESARIAL
 
-                </div>
+</div>
 
-                <button
-                    type="submit"
-                    class="login-btn"
-                >
-                    INGRESAR AL DASHBOARD
-                </button>
 
-                <div
-                    class="error"
-                    id="error"
-                >
-                    ⚠ Usuario o contraseña incorrectos
-                </div>
+<form
+    onsubmit="event.preventDefault(); ingresar();"
+>
 
-            </form>
 
-            <div class="footer">
+<div class="form-group">
 
-                <strong>DARSALUD DROGUERÍAS</strong><br>
 
-                Más cerca de usted<br>
+<label class="form-label">
+USUARIO
+</label>
 
-                Plataforma gerencial · Acceso autorizado
 
-            </div>
+<div class="input-box">
 
-        </div>
 
-    </section>
+<input
+    type="text"
+    id="usuario"
+    placeholder="Ingrese su usuario"
+    autocomplete="username"
+>
+
+
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+
+<label class="form-label">
+CONTRASEÑA
+</label>
+
+
+<div class="input-box">
+
+
+<input
+    type="password"
+    id="password"
+    placeholder="Ingrese su contraseña"
+    autocomplete="current-password"
+>
+
+
+<button
+    type="button"
+    class="password-toggle"
+    onclick="mostrarPassword()"
+    aria-label="Mostrar contraseña"
+>
+👁
+</button>
+
+
+</div>
+
+</div>
+
+
+<button
+    type="submit"
+    class="login-btn"
+>
+
+INGRESAR AL DASHBOARD
+
+</button>
+
+
+<div
+    class="error"
+    id="error"
+>
+⚠ Usuario o contraseña incorrectos
+</div>
+
+
+</form>
+
+
+<div class="footer">
+
+<strong>DARSALUD DROGUERÍAS</strong>
+
+<br>
+
+Más cerca de usted
+
+<br>
+
+Plataforma gerencial · Acceso autorizado
+
+</div>
+
+
+</div>
+
+
+</section>
+
 
 </main>
 
+
 <script>
+
 
 function ingresar() {
 
-    const usuario =
-        document.getElementById("usuario").value.trim();
 
-    const password =
-        document.getElementById("password").value;
+const usuario =
+document.getElementById("usuario").value.trim();
 
-    const error =
-        document.getElementById("error");
 
-    /*
-        CREDENCIALES ACTUALES
-    */
+const password =
+document.getElementById("password").value;
 
-    const usuarioCorrecto = "gerente";
 
-    const passwordCorrecta = "Darsalud2026";
+const error =
+document.getElementById("error");
 
-    if (
-        usuario === usuarioCorrecto &&
-        password === passwordCorrecta
-    ) {
 
-        window.location.href =
-            "Dashboard_Darsalud_Comparativo.html";
+const usuarioCorrecto =
+"gerente";
 
-    } else {
 
-        error.style.display = "block";
+const passwordCorrecta =
+"Darsalud2026";
 
-        setTimeout(() => {
 
-            error.style.display = "none";
+if (
+usuario === usuarioCorrecto &&
+password === passwordCorrecta
+) {
 
-        }, 3000);
 
-    }
+window.location.href =
+"Dashboard_Darsalud_Comparativo.html";
+
+
+} else {
+
+
+error.style.display =
+"block";
+
+
+setTimeout(() => {
+
+error.style.display =
+"none";
+
+}, 3000);
+
 }
+
+}
+
 
 function mostrarPassword() {
 
-    const password =
-        document.getElementById("password");
 
-    const boton =
-        document.querySelector(".password-toggle");
+const password =
+document.getElementById("password");
 
-    if (password.type === "password") {
 
-        password.type = "text";
+const boton =
+document.querySelector(".password-toggle");
 
-        boton.textContent = "🙈";
 
-    } else {
+if (
+password.type === "password"
+) {
 
-        password.type = "password";
 
-        boton.textContent = "👁";
+password.type = "text";
 
-    }
+
+boton.textContent =
+"🙈";
+
+
+} else {
+
+
+password.type =
+"password";
+
+
+boton.textContent =
+"👁";
+
 }
 
+}
+
+
 document.addEventListener(
-    "keydown",
-    function(event) {
+"keydown",
+function(event) {
 
-        if (event.key === "Enter") {
 
-            const usuario =
-                document.getElementById("usuario");
+if (event.key === "Enter") {
 
-            const password =
-                document.getElementById("password");
 
-            if (
-                document.activeElement === usuario ||
-                document.activeElement === password
-            ) {
-                ingresar();
-            }
-        }
-    }
+const usuario =
+document.getElementById("usuario");
+
+
+const password =
+document.getElementById("password");
+
+
+if (
+document.activeElement === usuario ||
+document.activeElement === password
+) {
+
+ingresar();
+
+}
+
+}
+
+}
 );
+
 
 </script>
 
+
 </body>
+
 </html>
 ```
