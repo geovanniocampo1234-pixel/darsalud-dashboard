@@ -27,29 +27,10 @@ steps:
 
   - name: Generar iconos Darsalud
     run: |
-      python - <<'PY'
-      from PIL import Image
-
-      logo = Image.open("Logo Oficial Darsalud Droguerías.png").convert("RGBA")
-
-      def crear_icono(tamano, salida):
-          fondo = Image.new("RGBA", (tamano, tamano), "#020b2d")
-
-          logo_copia = logo.copy()
-          logo_copia.thumbnail(
-              (int(tamano * 0.88), int(tamano * 0.88)),
-              Image.Resampling.LANCZOS
-          )
-
-          x = (tamano - logo_copia.width) // 2
-          y = (tamano - logo_copia.height) // 2
-
-          fondo.alpha_composite(logo_copia, (x, y))
-          fondo.convert("RGB").save(salida, "PNG", optimize=True)
-
-      crear_icono(192, "icons/icon-192.png")
-      crear_icono(512, "icons/icon-512.png")
-      PY
+      python -c "from PIL import Image; logo=Image.open('Logo Oficial Darsalud Droguerías.png').convert('RGBA'); fondo=Image.new('RGBA',(192,192),'#020b2d'); logo.thumbnail((168,168),Image.Resampling.LANCZOS); fondo.alpha_composite(logo,((192-logo.width)//2,(192-logo.height)//2)); fondo.convert('RGB').save('icon-192-temp.png','PNG',optimize=True)"
+      mkdir -p icons
+      mv icon-192-temp.png icons/icon-192.png
+      python -c "from PIL import Image; logo=Image.open('Logo Oficial Darsalud Droguerías.png').convert('RGBA'); fondo=Image.new('RGBA',(512,512),'#020b2d'); logo.thumbnail((450,450),Image.Resampling.LANCZOS); fondo.alpha_composite(logo,((512-logo.width)//2,(512-logo.height)//2)); fondo.convert('RGB').save('icons/icon-512.png','PNG',optimize=True)"
 
   - name: Guardar iconos en GitHub
     run: |
@@ -58,3 +39,4 @@ steps:
       git add icons/icon-192.png icons/icon-512.png
       git commit -m "Generar iconos PWA Darsalud" || echo "No hay cambios para guardar"
       git push
+```
