@@ -5,9 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>APP Darsalud - Dashboard Gerencial</title>
+  <title>Darsalud Droguerías | APP Gerencial</title>
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -22,75 +23,87 @@
       align-items: center;
       justify-content: center;
 
-      background:
-        linear-gradient(
-          135deg,
-          #0057a8 0%,
-          #0074c8 50%,
-          #003f7d 100%
-        );
+      background: linear-gradient(
+        135deg,
+        #004b87 0%,
+        #006eb6 50%,
+        #003b6b 100%
+      );
 
       padding: 20px;
     }
 
-    /* CONTENEDOR PRINCIPAL */
-
     .login-container {
       width: 100%;
-      max-width: 430px;
+      max-width: 440px;
     }
-
-    /* TARJETA */
 
     .login-card {
       background: #ffffff;
-
+      width: 100%;
+      padding: 42px 40px 36px;
       border-radius: 22px;
 
-      padding: 42px 38px 35px;
-
       box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.25);
+        0 20px 50px rgba(0,0,0,0.28);
 
       text-align: center;
     }
 
-    /* LOGO TEXTUAL */
+    /* =========================
+       LOGO DARSALUD DROGUERÍAS
+       ========================= */
 
     .logo {
-      margin-bottom: 25px;
+      margin-bottom: 30px;
     }
 
-    .logo-main {
-      font-size: 34px;
+    .logo-darsalud {
+      font-size: 38px;
       font-weight: 900;
       letter-spacing: 2px;
       color: #0057a8;
+      line-height: 1;
     }
 
-    .logo-sub {
-      font-size: 15px;
-      font-weight: bold;
-      letter-spacing: 4px;
-      color: #d71920;
-      margin-top: 4px;
+    .logo-droguerias {
+      margin-top: 8px;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 5px;
+      color: #0057a8;
+      text-transform: uppercase;
     }
 
-    /* TITULO */
+    .logo-line {
+      width: 70px;
+      height: 4px;
+      margin: 12px auto 0;
+
+      background: #0057a8;
+
+      border-radius: 5px;
+    }
+
+    /* =========================
+       TÍTULO
+       ========================= */
 
     h1 {
-      color: #1d1d1d;
       font-size: 25px;
+      color: #222222;
       margin-bottom: 8px;
     }
 
     .subtitle {
-      color: #777;
       font-size: 15px;
+      color: #777777;
       margin-bottom: 30px;
     }
 
-    /* CAMPOS */
+    /* =========================
+       CAMPOS
+       ========================= */
 
     .input-group {
       text-align: left;
@@ -101,7 +114,7 @@
       display: block;
       font-size: 14px;
       font-weight: bold;
-      color: #444;
+      color: #444444;
       margin-bottom: 7px;
     }
 
@@ -113,7 +126,9 @@
       position: absolute;
       left: 14px;
       top: 50%;
+
       transform: translateY(-50%);
+
       font-size: 18px;
     }
 
@@ -122,7 +137,8 @@
 
       padding: 14px 14px 14px 45px;
 
-      border: 1px solid #d5d5d5;
+      border: 1px solid #d2d2d2;
+
       border-radius: 10px;
 
       font-size: 16px;
@@ -133,46 +149,52 @@
     }
 
     input:focus {
-      border-color: #0074c8;
+      border-color: #006eb6;
 
       box-shadow:
-        0 0 0 3px rgba(0, 116, 200, 0.12);
+        0 0 0 3px rgba(0,110,182,0.13);
     }
 
-    /* BOTÓN */
+    /* =========================
+       BOTÓN
+       ========================= */
 
     button {
       width: 100%;
 
       padding: 15px;
 
+      margin-top: 5px;
+
       border: none;
+
       border-radius: 10px;
 
-      background: #d71920;
+      background: #0057a8;
 
-      color: white;
+      color: #ffffff;
 
       font-size: 16px;
+
       font-weight: bold;
 
       cursor: pointer;
 
       transition: 0.2s;
-
-      margin-top: 5px;
     }
 
     button:hover {
-      background: #b9151b;
+      background: #003f7d;
 
       transform: translateY(-1px);
 
       box-shadow:
-        0 5px 15px rgba(215, 25, 32, 0.25);
+        0 6px 15px rgba(0,0,0,0.18);
     }
 
-    /* ERROR */
+    /* =========================
+       ERROR
+       ========================= */
 
     .error {
       display: none;
@@ -188,26 +210,31 @@
       color: #c40000;
 
       font-size: 14px;
+
       font-weight: bold;
     }
 
-    /* PIE */
+    /* =========================
+       PIE
+       ========================= */
 
     .footer {
       margin-top: 28px;
 
-      color: #888;
-
       font-size: 12px;
 
-      line-height: 1.5;
+      line-height: 1.6;
+
+      color: #888888;
     }
 
     .footer strong {
       color: #0057a8;
     }
 
-    /* CELULARES */
+    /* =========================
+       CELULARES
+       ========================= */
 
     @media (max-width: 480px) {
 
@@ -220,8 +247,13 @@
         border-radius: 18px;
       }
 
-      .logo-main {
-        font-size: 29px;
+      .logo-darsalud {
+        font-size: 31px;
+      }
+
+      .logo-droguerias {
+        font-size: 14px;
+        letter-spacing: 4px;
       }
 
       h1 {
@@ -231,6 +263,7 @@
     }
 
   </style>
+
 </head>
 
 <body>
@@ -239,22 +272,24 @@
 
     <div class="login-card">
 
-      <!-- LOGO PROVISIONAL -->
+      <!-- LOGO -->
 
       <div class="logo">
 
-        <div class="logo-main">
+        <div class="logo-darsalud">
           DARSALUD
         </div>
 
-        <div class="logo-sub">
+        <div class="logo-droguerias">
           DROGUERÍAS
         </div>
+
+        <div class="logo-line"></div>
 
       </div>
 
 
-      <!-- TITULO -->
+      <!-- TÍTULO -->
 
       <h1>
         APP Darsalud
@@ -324,7 +359,7 @@
       </button>
 
 
-      <!-- MENSAJE DE ERROR -->
+      <!-- ERROR -->
 
       <div id="error" class="error">
         Usuario o contraseña incorrectos
@@ -335,7 +370,9 @@
 
       <div class="footer">
 
-        <strong>Darsalud Droguerías</strong><br>
+        <strong>DARSALUD DROGUERÍAS</strong>
+
+        <br>
 
         Más cerca de usted
 
@@ -363,12 +400,10 @@
       /*
         ACCESO TEMPORAL PARA PRUEBAS
 
-        Usuario:
-        gerente
-
-        Contraseña:
-        Darsalud2026
+        Usuario: gerente
+        Contraseña: Darsalud2026
       */
+
 
       if (
         usuario === "gerente" &&
@@ -387,7 +422,7 @@
     }
 
 
-    /* Permitir ENTER para ingresar */
+    /* ENTER PARA INGRESAR */
 
     document.addEventListener(
       "keydown",
