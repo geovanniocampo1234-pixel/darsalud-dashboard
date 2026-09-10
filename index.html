@@ -14,7 +14,7 @@ content="width=device-width, initial-scale=1.0"
 
 <meta
 name="theme-color"
-content="#061426"
+content="#0066ff"
 
 >
 
@@ -60,25 +60,7 @@ content="#061426"
       overflow-x: hidden;
 
       background:
-
-        radial-gradient(
-          circle at 20% 20%,
-          rgba(0, 126, 255, 0.20),
-          transparent 35%
-        ),
-
-        radial-gradient(
-          circle at 80% 80%,
-          rgba(0, 183, 255, 0.15),
-          transparent 35%
-        ),
-
-        linear-gradient(
-          135deg,
-          #020b16 0%,
-          #061426 45%,
-          #03101f 100%
-        );
+        #ffffff;
 
       position: relative;
 
@@ -86,7 +68,7 @@ content="#061426"
 
 
     /* =====================================================
-       EFECTOS DE FONDO
+       FONDO FUTURISTA AZUL
        ===================================================== */
 
     body::before {
@@ -95,18 +77,21 @@ content="#061426"
 
       position: fixed;
 
-      width: 450px;
-      height: 450px;
+      width: 520px;
+      height: 520px;
 
       border-radius: 50%;
 
       background:
-        rgba(0, 122, 255, 0.08);
+        radial-gradient(
+          circle,
+          rgba(0,126,255,0.16) 0%,
+          rgba(0,126,255,0.06) 35%,
+          transparent 70%
+        );
 
-      filter: blur(80px);
-
-      top: -180px;
-      left: -180px;
+      top: -250px;
+      left: -220px;
 
       pointer-events: none;
 
@@ -119,18 +104,21 @@ content="#061426"
 
       position: fixed;
 
-      width: 400px;
-      height: 400px;
+      width: 500px;
+      height: 500px;
 
       border-radius: 50%;
 
       background:
-        rgba(0, 183, 255, 0.06);
+        radial-gradient(
+          circle,
+          rgba(0,183,255,0.14) 0%,
+          rgba(0,183,255,0.05) 40%,
+          transparent 70%
+        );
 
-      filter: blur(80px);
-
-      bottom: -180px;
-      right: -150px;
+      bottom: -250px;
+      right: -220px;
 
       pointer-events: none;
 
@@ -149,18 +137,18 @@ content="#061426"
 
       pointer-events: none;
 
-      opacity: 0.18;
+      opacity: 0.35;
 
       background-image:
 
         linear-gradient(
-          rgba(0, 140, 255, 0.08) 1px,
+          rgba(0,102,255,0.035) 1px,
           transparent 1px
         ),
 
         linear-gradient(
           90deg,
-          rgba(0, 140, 255, 0.08) 1px,
+          rgba(0,102,255,0.035) 1px,
           transparent 1px
         );
 
@@ -171,10 +159,55 @@ content="#061426"
         linear-gradient(
           to bottom,
           transparent,
-          black 25%,
-          black 75%,
+          black 20%,
+          black 80%,
           transparent
         );
+
+    }
+
+
+    /* =====================================================
+       DECORACIÓN FUTURISTA
+       ===================================================== */
+
+    .tech-circle {
+
+      position: fixed;
+
+      width: 700px;
+      height: 700px;
+
+      border:
+        1px solid
+        rgba(0,119,255,0.07);
+
+      border-radius: 50%;
+
+      pointer-events: none;
+
+      top: 50%;
+      left: 50%;
+
+      transform:
+        translate(-50%, -50%);
+
+    }
+
+
+    .tech-circle::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 45px;
+
+      border:
+        1px solid
+        rgba(0,119,255,0.05);
+
+      border-radius: 50%;
 
     }
 
@@ -205,36 +238,29 @@ content="#061426"
       width: 100%;
 
       padding:
-        45px
         42px
-        32px;
+        42px
+        30px;
 
-      border-radius: 26px;
+      border-radius: 24px;
 
       background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,0.10),
-          rgba(255,255,255,0.035)
-        );
+        rgba(255,255,255,0.96);
 
       border:
         1px solid
-        rgba(255,255,255,0.15);
-
-      backdrop-filter:
-        blur(20px);
-
-      -webkit-backdrop-filter:
-        blur(20px);
+        rgba(0,102,255,0.15);
 
       box-shadow:
 
-        0 30px 80px
-        rgba(0,0,0,0.55),
+        0 25px 70px
+        rgba(0,65,150,0.14),
+
+        0 0 0 1px
+        rgba(0,126,255,0.04),
 
         inset 0 1px 0
-        rgba(255,255,255,0.08);
+        rgba(255,255,255,1);
 
       text-align: center;
 
@@ -276,7 +302,9 @@ content="#061426"
     }
 
 
-    /* Línea superior luminosa */
+    /* =====================================================
+       BARRA SUPERIOR FUTURISTA
+       ===================================================== */
 
     .login-card::before {
 
@@ -285,30 +313,57 @@ content="#061426"
       position: absolute;
 
       top: 0;
-      left: 12%;
+      left: 0;
 
-      width: 76%;
+      width: 100%;
 
-      height: 2px;
+      height: 4px;
 
       background:
 
         linear-gradient(
           90deg,
-          transparent,
-          #008cff,
-          #36c5ff,
-          #008cff,
-          transparent
+          #0057ff,
+          #00aaff,
+          #006eff,
+          #00c8ff,
+          #0057ff
         );
 
       box-shadow:
 
         0 0 12px
-        rgba(0,150,255,0.8),
+        rgba(0,119,255,0.55),
 
         0 0 30px
-        rgba(0,150,255,0.45);
+        rgba(0,160,255,0.25);
+
+    }
+
+
+    /* =====================================================
+       DETALLE LATERAL
+       ===================================================== */
+
+    .login-card::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 180px;
+      height: 180px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid
+        rgba(0,119,255,0.06);
+
+      top: -90px;
+      right: -90px;
+
+      pointer-events: none;
 
     }
 
@@ -319,9 +374,14 @@ content="#061426"
 
     .logo-area {
 
-      margin-bottom: 28px;
+      margin-bottom: 25px;
 
       position: relative;
+
+      padding:
+        8px
+        0
+        4px;
 
     }
 
@@ -330,20 +390,20 @@ content="#061426"
 
       position: absolute;
 
-      width: 220px;
+      width: 260px;
       height: 90px;
 
       left: 50%;
-      top: 5px;
+      top: 10px;
 
       transform:
         translateX(-50%);
 
       background:
-        rgba(0, 140, 255, 0.12);
+        rgba(0,126,255,0.10);
 
       filter:
-        blur(35px);
+        blur(38px);
 
       pointer-events: none;
 
@@ -367,8 +427,8 @@ content="#061426"
       filter:
 
         drop-shadow(
-          0 0 10px
-          rgba(0,132,255,0.28)
+          0 3px 8px
+          rgba(0,80,180,0.14)
         );
 
     }
@@ -380,20 +440,22 @@ content="#061426"
 
     .separator {
 
-      width: 100%;
+      width: 85%;
 
       height: 1px;
 
       margin:
         0 auto
-        26px;
+        25px;
 
       background:
 
         linear-gradient(
           90deg,
           transparent,
-          rgba(0,151,255,0.55),
+          rgba(0,119,255,0.35),
+          rgba(0,180,255,0.65),
+          rgba(0,119,255,0.35),
           transparent
         );
 
@@ -407,7 +469,7 @@ content="#061426"
     .welcome-label {
 
       color:
-        #5ccaff;
+        #006cff;
 
       font-size:
         11px;
@@ -430,19 +492,19 @@ content="#061426"
     h1 {
 
       color:
-        #ffffff;
+        #09213f;
 
       font-size:
         27px;
 
       font-weight:
-        700;
+        800;
 
       margin-bottom:
         7px;
 
       letter-spacing:
-        0.3px;
+        0.2px;
 
     }
 
@@ -450,13 +512,13 @@ content="#061426"
     .subtitle {
 
       color:
-        rgba(255,255,255,0.60);
+        #607086;
 
       font-size:
         14px;
 
       margin-bottom:
-        30px;
+        28px;
 
     }
 
@@ -482,16 +544,16 @@ content="#061426"
         block;
 
       color:
-        rgba(255,255,255,0.80);
+        #25415f;
 
       font-size:
         12px;
 
       font-weight:
-        700;
+        800;
 
       letter-spacing:
-        0.6px;
+        0.7px;
 
       margin-bottom:
         8px;
@@ -525,7 +587,7 @@ content="#061426"
         translateY(-50%);
 
       color:
-        #55c9ff;
+        #0075ff;
 
       font-size:
         17px;
@@ -549,16 +611,16 @@ content="#061426"
 
       border:
         1px solid
-        rgba(255,255,255,0.12);
+        rgba(0,102,255,0.20);
 
       border-radius:
         12px;
 
       background:
-        rgba(2,15,30,0.72);
+        #f2f7ff;
 
       color:
-        #ffffff;
+        #102d4d;
 
       font-size:
         15px;
@@ -570,8 +632,8 @@ content="#061426"
         all 0.25s ease;
 
       box-shadow:
-        inset 0 1px 2px
-        rgba(0,0,0,0.25);
+        inset 0 1px 3px
+        rgba(0,50,120,0.06);
 
     }
 
@@ -579,7 +641,7 @@ content="#061426"
     input::placeholder {
 
       color:
-        rgba(255,255,255,0.35);
+        #8a9bb0;
 
     }
 
@@ -587,18 +649,18 @@ content="#061426"
     input:focus {
 
       border-color:
-        #009cff;
+        #007cff;
 
       background:
-        rgba(3,22,42,0.90);
+        #ffffff;
 
       box-shadow:
 
         0 0 0 3px
-        rgba(0,156,255,0.10),
+        rgba(0,126,255,0.10),
 
-        0 0 18px
-        rgba(0,156,255,0.15);
+        0 0 20px
+        rgba(0,126,255,0.12);
 
     }
 
@@ -628,7 +690,7 @@ content="#061426"
         transparent;
 
       color:
-        rgba(255,255,255,0.45);
+        #7690aa;
 
       cursor:
         pointer;
@@ -654,7 +716,7 @@ content="#061426"
     .password-toggle:hover {
 
       color:
-        #59caff;
+        #007cff;
 
       background:
         transparent;
@@ -693,8 +755,9 @@ content="#061426"
 
         linear-gradient(
           135deg,
-          #006eff,
-          #009cff
+          #0057ff,
+          #008cff,
+          #00a8ff
         );
 
       color:
@@ -718,7 +781,10 @@ content="#061426"
       box-shadow:
 
         0 8px 25px
-        rgba(0,119,255,0.30);
+        rgba(0,103,255,0.28),
+
+        0 0 20px
+        rgba(0,160,255,0.10);
 
       position:
         relative;
@@ -754,7 +820,7 @@ content="#061426"
         linear-gradient(
           90deg,
           transparent,
-          rgba(255,255,255,0.25),
+          rgba(255,255,255,0.40),
           transparent
         );
 
@@ -783,7 +849,10 @@ content="#061426"
       box-shadow:
 
         0 12px 32px
-        rgba(0,140,255,0.40);
+        rgba(0,105,255,0.35),
+
+        0 0 25px
+        rgba(0,170,255,0.18);
 
     }
 
@@ -815,14 +884,14 @@ content="#061426"
         9px;
 
       background:
-        rgba(255,45,45,0.10);
+        rgba(255,45,45,0.07);
 
       border:
         1px solid
-        rgba(255,70,70,0.25);
+        rgba(255,70,70,0.22);
 
       color:
-        #ff8585;
+        #d93030;
 
       font-size:
         13px;
@@ -866,14 +935,14 @@ content="#061426"
     .footer {
 
       margin-top:
-        28px;
+        26px;
 
       padding-top:
-        18px;
+        17px;
 
       border-top:
         1px solid
-        rgba(255,255,255,0.07);
+        rgba(0,102,255,0.10);
 
       font-size:
         11px;
@@ -882,7 +951,7 @@ content="#061426"
         1.7;
 
       color:
-        rgba(255,255,255,0.38);
+        #7a8ca0;
 
     }
 
@@ -890,7 +959,7 @@ content="#061426"
     .footer strong {
 
       color:
-        #54c7ff;
+        #006eff;
 
       letter-spacing:
         1.2px;
@@ -907,7 +976,7 @@ content="#061426"
         10px;
 
       color:
-        rgba(255,255,255,0.25);
+        #a0adba;
 
     }
 
@@ -929,12 +998,12 @@ content="#061426"
       .login-card {
 
         padding:
-          35px
+          34px
           24px
-          25px;
+          24px;
 
         border-radius:
-          22px;
+          21px;
 
       }
 
@@ -978,6 +1047,17 @@ content="#061426"
 
       }
 
+
+      .tech-circle {
+
+        width:
+          500px;
+
+        height:
+          500px;
+
+      }
+
     }
 
 
@@ -993,7 +1073,7 @@ content="#061426"
           25px;
 
         padding-bottom:
-          22px;
+          20px;
 
       }
 
@@ -1001,7 +1081,7 @@ content="#061426"
       .logo-area {
 
         margin-bottom:
-          18px;
+          17px;
 
       }
 
@@ -1025,7 +1105,7 @@ content="#061426"
       .footer {
 
         margin-top:
-          18px;
+          17px;
 
       }
 
@@ -1040,6 +1120,8 @@ content="#061426"
   <!-- FONDO TECNOLÓGICO -->
 
   <div class="tech-lines"></div>
+
+  <div class="tech-circle"></div>
 
   <div class="login-container">
 
