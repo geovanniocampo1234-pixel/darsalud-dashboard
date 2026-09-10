@@ -1,1 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APP Darsalud</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ffffff, #f1f5f9);
+    }
+
+    .login-box {
+      width: 100%;
+      max-width: 400px;
+      background: white;
+      padding: 40px;
+      border-radius: 18px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: bold;
+      color: #c40000;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #222;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      background: #c40000;
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #a80000;
+    }
+
+    .error {
+      color: #c40000;
+      margin-top: 15px;
+      display: none;
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-size: 12px;
+      color: #888;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-box">
+
+    <div class="logo">DARSALUD</div>
+
+    <h1>APP Darsalud</h1>
+
+    <div class="subtitle">
+      Dashboard Gerencial
+    </div>
+
+    <input
+      type="text"
+      id="usuario"
+      placeholder="Usuario"
+      autocomplete="username"
+    >
+
+    <input
+      type="password"
+      id="password"
+      placeholder="Contraseña"
+      autocomplete="current-password"
+    >
+
+    <button onclick="ingresar()">
+      INGRESAR
+    </button>
+
+    <div id="error" class="error">
+      Usuario o contraseña incorrectos
+    </div>
+
+    <div class="footer">
+      Darsalud Droguerías · Más cerca de usted
+    </div>
+
+  </div>
+
+  <script>
+
+    function ingresar() {
+
+      const usuario = document.getElementById("usuario").value;
+      const password = document.getElementById("password").value;
+      const error = document.getElementById("error");
+
+      /*
+        ACCESO TEMPORAL PARA PRUEBAS
+        Usuario: gerente
+        Contraseña: Darsalud2026
+      */
+
+      if (usuario === "gerente" && password === "Darsalud2026") {
+
+        window.location.href = "Dashboard_Darsalud_Comparativo.html";
+
+      } else {
+
+        error.style.display = "block";
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
