@@ -1,3 +1,4 @@
+```json
 {
   "name": "Darsalud Droguerías - Dashboard Gerencial",
   "short_name": "Darsalud",
@@ -7,7 +8,6 @@
   "background_color": "#020b2d",
   "theme_color": "#020b2d",
   "description": "Dashboard Gerencial de Darsalud Droguerías",
-
   "icons": [
     {
       "src": "./Logo Oficial Darsalud Droguerías.png",
