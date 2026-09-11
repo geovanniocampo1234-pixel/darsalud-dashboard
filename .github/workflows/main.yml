@@ -39,4 +39,3 @@ steps:
       git add icons/icon-192.png icons/icon-512.png
       git commit -m "Generar iconos PWA Darsalud" || echo "No hay cambios para guardar"
       git push
-```
