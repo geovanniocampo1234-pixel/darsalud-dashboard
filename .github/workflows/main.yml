@@ -1,41 +1,39 @@
 name: Generar iconos Darsalud
 
 on:
-workflow_dispatch:
+  workflow_dispatch:
 
 permissions:
-contents: write
+  contents: write
 
 jobs:
-generar-iconos:
-runs-on: ubuntu-latest
+  generar-iconos:
+    runs-on: ubuntu-latest
 
-```
-steps:
-  - name: Descargar repositorio
-    uses: actions/checkout@v4
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
 
-  - name: Preparar Python
-    uses: actions/setup-python@v5
-    with:
-      python-version: "3.12"
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
-  - name: Instalar Pillow
-    run: |
-      python -m pip install --upgrade pip
-      pip install Pillow
+      - name: Instalar Pillow
+        run: |
+          python -m pip install --upgrade pip
+          pip install Pillow
 
-  - name: Generar iconos Darsalud
-    run: |
-      python -c "from PIL import Image; logo=Image.open('Logo Oficial Darsalud Droguerías.png').convert('RGBA'); fondo=Image.new('RGBA',(192,192),'#020b2d'); logo.thumbnail((168,168),Image.Resampling.LANCZOS); fondo.alpha_composite(logo,((192-logo.width)//2,(192-logo.height)//2)); fondo.convert('RGB').save('icon-192-temp.png','PNG',optimize=True)"
-      mkdir -p icons
-      mv icon-192-temp.png icons/icon-192.png
-      python -c "from PIL import Image; logo=Image.open('Logo Oficial Darsalud Droguerías.png').convert('RGBA'); fondo=Image.new('RGBA',(512,512),'#020b2d'); logo.thumbnail((450,450),Image.Resampling.LANCZOS); fondo.alpha_composite(logo,((512-logo.width)//2,(512-logo.height)//2)); fondo.convert('RGB').save('icons/icon-512.png','PNG',optimize=True)"
+      - name: Generar iconos Darsalud
+        run: |
+          mkdir -p icons
+          python -c "from PIL import Image; logo=Image.open('Logo Oficial Darsalud Droguerías.png').convert('RGBA'); fondo=Image.new('RGBA',(192,192),'#020b2d'); logo.thumbnail((168,168),Image.Resampling.LANCZOS); fondo.alpha_composite(logo,((192-logo.width)//2,(192-logo.height)//2)); fondo.convert('RGB').save('icons/icon-192.png','PNG',optimize=True)"
+          python -c "from PIL import Image; logo=Image.open('Logo Oficial Darsalud Droguerías.png').convert('RGBA'); fondo=Image.new('RGBA',(512,512),'#020b2d'); logo.thumbnail((450,450),Image.Resampling.LANCZOS); fondo.alpha_composite(logo,((512-logo.width)//2,(512-logo.height)//2)); fondo.convert('RGB').save('icons/icon-512.png','PNG',optimize=True)"
 
-  - name: Guardar iconos en GitHub
-    run: |
-      git config user.name "github-actions[bot]"
-      git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      git add icons/icon-192.png icons/icon-512.png
-      git commit -m "Generar iconos PWA Darsalud" || echo "No hay cambios para guardar"
-      git push
+      - name: Guardar iconos en GitHub
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add icons/icon-192.png icons/icon-512.png
+          git commit -m "Generar iconos PWA Darsalud" || echo "No hay cambios para guardar"
+          git push
