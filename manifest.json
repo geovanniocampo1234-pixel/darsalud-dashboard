@@ -9,9 +9,15 @@
   "description": "Dashboard Gerencial de Darsalud Droguerías",
   "icons": [
     {
-      "src": "./Logo Oficial Darsalud Droguerías.png",
+      "src": "./icono-192.png",
       "type": "image/png",
-      "sizes": "any",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icono-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
       "purpose": "any maskable"
     }
   ]
